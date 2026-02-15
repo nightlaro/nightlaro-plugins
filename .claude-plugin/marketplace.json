@@ -1,10 +1,10 @@
 {
-  "name": "knowledge-bank-marketplace",
+  "name": "nightlaro-plugins",
   "owner": {
-    "name": "Volley"
+    "name": "nightlaro"
   },
   "metadata": {
-    "description": "Knowledge Bank - auto-capture and recall context across Claude Code sessions",
+    "description": "Claude Code plugins by nightlaro",
     "version": "1.0.0"
   },
   "plugins": [
