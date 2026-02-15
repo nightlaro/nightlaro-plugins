@@ -1,0 +1,24 @@
+{
+  "name": "knowledge-bank-marketplace",
+  "owner": {
+    "name": "Volley"
+  },
+  "metadata": {
+    "description": "Knowledge Bank - auto-capture and recall context across Claude Code sessions",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "knowledge-bank",
+      "source": ".",
+      "description": "Auto-capture critical context on task completion. Search it later with /recall.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Volley"
+      },
+      "license": "MIT",
+      "keywords": ["context", "knowledge", "memory", "onboarding", "recall"],
+      "category": "productivity"
+    }
+  ]
+}
