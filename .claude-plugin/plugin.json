@@ -1,0 +1,10 @@
+{
+  "name": "knowledge-bank",
+  "version": "1.0.0",
+  "description": "Auto-capture critical context on task completion. Search it later with /recall.",
+  "author": {
+    "name": "Volley"
+  },
+  "license": "MIT",
+  "keywords": ["context", "knowledge", "memory", "onboarding"]
+}
