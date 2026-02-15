@@ -10,7 +10,7 @@
   "plugins": [
     {
       "name": "knowledge-bank",
-      "source": ".",
+      "source": "./plugins/knowledge-bank",
       "description": "Auto-capture critical context on task completion. Search it later with /recall.",
       "version": "1.0.0",
       "author": {
