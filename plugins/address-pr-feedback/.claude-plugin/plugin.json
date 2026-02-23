@@ -1,0 +1,10 @@
+{
+  "name": "address-pr-feedback",
+  "version": "1.0.0",
+  "description": "Fetch unresolved PR feedback and CI errors, dispatch parallel sub-agents to analyze and fix each one.",
+  "author": {
+    "name": "Volley"
+  },
+  "license": "MIT",
+  "keywords": ["pr", "review", "feedback", "code-review", "ci"]
+}
