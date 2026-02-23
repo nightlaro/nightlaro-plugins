@@ -29,7 +29,19 @@ Extract and store: `pr_number`, `pr_title`, `branch_name`, `pr_url`.
 
 ## Step 2: Fetch Unresolved Review Threads
 
-Use the GitHub GraphQL API to fetch all review threads and filter to unresolved ones:
+Use the GitHub GraphQL API to fetch all review threads and filter to unresolved ones.
+
+First, fetch the repository owner and name so you can substitute them into the GraphQL command:
+
+```bash
+gh repo view --json owner,name -q '.owner.login'
+```
+
+```bash
+gh repo view --json name -q '.name'
+```
+
+Then substitute the actual owner and repo values into this command (replace `{owner}` and `{repo}` with the real values you just fetched):
 
 ```bash
 gh api graphql -f query='
@@ -54,12 +66,7 @@ query($owner: String!, $repo: String!, $pr: Int!) {
       }
     }
   }
-}' -F owner='{owner}' -F repo='{repo}' -F pr={pr_number}
-```
-
-To determine `owner` and `repo`, run:
-```bash
-gh repo view --json owner,name
+}' -F owner={owner} -F repo={repo} -F pr={pr_number}
 ```
 
 From the response, filter to threads where `isResolved` is `false`. For each unresolved thread:
@@ -74,16 +81,16 @@ If there are zero unresolved threads, report "No unresolved review threads found
 Check for failed CI checks on the PR:
 
 ```bash
-gh pr checks {pr_number} --json name,state,detailsUrl
+gh pr checks {pr_number} --json name,state,link
 ```
 
-For each check where `state` is `FAILURE`:
-- Fetch the failed check's log output. Use the Actions run ID from the details URL:
+For each check where `state` is `FAILURE` or `STARTUP_FAILURE`:
+- If the check's `link` URL matches `https://github.com/{owner}/{repo}/actions/runs/{run_id}`, extract the run ID and fetch the failed check's log output:
   ```bash
   gh run view {run_id} --log-failed
   ```
-- Extract the error message, file path, and line number from the log output
-- Summarize the CI error concisely (the full log is too verbose for a sub-agent prompt)
+  Extract the error message, file path, and line number from the log output and summarize the CI error concisely (the full log is too verbose for a sub-agent prompt).
+- Otherwise (non-Actions CI check), note the check name, description, and link URL but skip log fetching. The sub-agent will work from the check name and description only.
 
 If no CI failures, report "No CI failures found" but continue (there may be review feedback).
 
