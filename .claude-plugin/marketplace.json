@@ -19,6 +19,18 @@
       "license": "MIT",
       "keywords": ["context", "knowledge", "memory", "onboarding", "recall"],
       "category": "productivity"
+    },
+    {
+      "name": "address-pr-feedback",
+      "source": "./plugins/address-pr-feedback",
+      "description": "Fetch unresolved PR feedback and CI errors, dispatch parallel sub-agents to analyze and fix each one.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Volley"
+      },
+      "license": "MIT",
+      "keywords": ["pr", "review", "feedback", "code-review", "ci"],
+      "category": "productivity"
     }
   ]
 }
