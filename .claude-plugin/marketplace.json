@@ -17,7 +17,13 @@
         "name": "Volley"
       },
       "license": "MIT",
-      "keywords": ["context", "knowledge", "memory", "onboarding", "recall"],
+      "keywords": [
+        "context",
+        "knowledge",
+        "memory",
+        "onboarding",
+        "recall"
+      ],
       "category": "productivity"
     },
     {
@@ -29,7 +35,32 @@
         "name": "Volley"
       },
       "license": "MIT",
-      "keywords": ["pr", "review", "feedback", "code-review", "ci"],
+      "keywords": [
+        "pr",
+        "review",
+        "feedback",
+        "code-review",
+        "ci"
+      ],
+      "category": "productivity"
+    },
+    {
+      "name": "opus-fable",
+      "source": "./plugins/opus-fable",
+      "description": "Execute a task prompt Fable-style on a non-Fable model: goal-first autonomous execution with spec derivation, workflow orchestration, and evidence-gated completion.",
+      "version": "1.0.0",
+      "author": {
+        "name": "nightlaro"
+      },
+      "license": "MIT",
+      "keywords": [
+        "autonomous",
+        "execution",
+        "orchestration",
+        "workflow",
+        "goal-first",
+        "verification"
+      ],
       "category": "productivity"
     }
   ]

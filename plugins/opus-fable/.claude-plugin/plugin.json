@@ -1,0 +1,10 @@
+{
+  "name": "opus-fable",
+  "version": "1.0.0",
+  "description": "Execute a task prompt Fable-style on a non-Fable model: goal-first autonomous execution with spec derivation, workflow orchestration, and evidence-gated completion.",
+  "author": {
+    "name": "nightlaro"
+  },
+  "license": "MIT",
+  "keywords": ["autonomous", "execution", "orchestration", "workflow", "goal-first", "verification"]
+}
